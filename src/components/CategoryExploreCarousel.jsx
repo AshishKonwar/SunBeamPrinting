@@ -11,63 +11,45 @@ import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 const categories = [
   {
     id: 1,
-    name: "Business Cards",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=150&h=150&fit=crop&crop=center",
-    color: "#F5F5DC"
+    name: "Any Paper Printing",
+    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=150&h=150&fit=crop&crop=center",
+    color: "#FF6B35"
   },
   {
     id: 2,
-    name: "Postcards & Print Advertising",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=150&h=150&fit=crop&crop=center",
-    color: "#E8F5E8"
+    name: "Books",
+    image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=150&h=150&fit=crop&crop=center",
+    color: "#4CAF50"
   },
   {
     id: 3,
-    name: "Signs, Banners & Posters",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=150&h=150&fit=crop&crop=center",
-    color: "#FFF3E0"
+    name: "Magazines",
+    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=150&h=150&fit=crop&crop=center",
+    color: "#FF9800"
   },
   {
     id: 4,
-    name: "Stickers & Labels",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=150&h=150&fit=crop&crop=center",
-    color: "#FFF9C4"
+    name: "Posters",
+    image: "https://images.unsplash.com/photo-1500336624523-d727130c3328?w=150&h=150&fit=crop&crop=center",
+    color: "#9C27B0"
   },
   {
     id: 5,
-    name: "Clothing & Bags",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=150&h=150&fit=crop&crop=center",
-    color: "#F3E5F5"
+    name: "Binding Services",
+    image: "https://images.unsplash.com/photo-1517842645767-c639042777db?w=150&h=150&fit=crop&crop=center",
+    color: "#795548"
   },
   {
     id: 6,
-    name: "Promotional Products",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=150&h=150&fit=crop&crop=center",
-    color: "#E3F2FD"
+    name: "Laminating",
+    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=150&h=150&fit=crop&crop=center",
+    color: "#2196F3"
   },
   {
     id: 7,
-    name: "Packaging",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=150&h=150&fit=crop&crop=center",
-    color: "#EFEBE9"
-  },
-  {
-    id: 8,
-    name: "Invitations, Gifts & Stationery",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=150&h=150&fit=crop&crop=center",
-    color: "#FCE4EC"
-  },
-  {
-    id: 9,
-    name: "Wedding",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=150&h=150&fit=crop&crop=center",
-    color: "#E8F5E8"
-  },
-  {
-    id: 10,
-    name: "Design & Logo",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=150&h=150&fit=crop&crop=center",
-    color: "#FFF8E1"
+    name: "Digital Printing",
+    image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=150&h=150&fit=crop&crop=center",
+    color: "#E91E63"
   }
 ];
 
@@ -105,8 +87,8 @@ export default function CategoryExploreCarousel() {
           sx={{ 
             mb: 4, 
             fontWeight: 700,
-            color: "text.primary",
-            textAlign: "left"
+            color: "grey.800",
+            textAlign: "center"
           }}
         >
           Explore all categories
@@ -133,7 +115,7 @@ export default function CategoryExploreCarousel() {
               <ChevronLeft />
             </IconButton>
           )}
-
+{/* 
           {canScrollRight && (
             <IconButton
               onClick={() => scroll('right')}
@@ -153,7 +135,7 @@ export default function CategoryExploreCarousel() {
             >
               <ChevronRight />
             </IconButton>
-          )}
+          )} */}
 
           {/* Carousel Container */}
           <Box
@@ -167,7 +149,8 @@ export default function CategoryExploreCarousel() {
               msOverflowStyle: "none",
               "&::-webkit-scrollbar": { display: "none" },
               px: 2,
-              pb: 2
+              pb: 2,
+              justifyContent: "center"
             }}
           >
             {categories.map((category) => (

@@ -1,5 +1,7 @@
-import { AppBar, Box, Toolbar, Typography, Stack } from "@mui/material";
+import { AppBar, Box, Toolbar, Typography, Stack, OutlinedInput, InputAdornment, IconButton } from "@mui/material";
 import { FaSignInAlt } from "react-icons/fa";
+import books from "../assets/pictures/books.jpeg";
+import SearchIcon from "@mui/icons-material/Search";
 
 export default function Header() {
   return (
@@ -14,46 +16,56 @@ export default function Header() {
       }}
     >
       {/* Top row: logo, search, utilities */}
-      <Toolbar sx={{ gap: 2, minHeight: 72 }}>
-        <Box
-          className="site-logo"
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            fontWeight: 700,
-            fontSize: 24,
-          }}
-        >
-          <span className="logo-mark">S</span>
-          <span className="logo-text" color="grey.800">
-            Sun Beam
-          </span>
-        </Box>
+      <Toolbar sx={{ gap: 5, minHeight: 72 }}>
+  <Box
+    className="site-logo"
+    sx={{
+      display: "flex",
+      alignItems: "center",
+      fontWeight: 700,
+      fontSize: 24,
+    }}
+  >
+    <span className="logo-mark">S</span>
+    <Typography variant="inherit" sx={{ color: "grey.800" }}>
+      Sun Beam
+    </Typography>
+  </Box>
 
-        <div className="header-search">
-          <input type="text" placeholder="Search" aria-label="Search" />
-          <button aria-label="Search">🔍</button>
-        </div>
+  {/* Modern Search Bar */}
+  <OutlinedInput
+    placeholder="Search..."
+    size="small"
+    sx={{
+      flex: 1,
+      maxWidth: 400,
+      borderRadius: "50px",
+      backgroundColor: "white",
+      px: 1,
+      "& fieldset": { border: "none" }, // removes default border
+      boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+      color: "grey.800"
+    }}
+    endAdornment={
+      <InputAdornment position="end">
+        <IconButton edge="end" aria-label="search">
+          <SearchIcon />
+        </IconButton>
+      </InputAdornment>
+    }
+  />
 
-        <div className="header-utilities">
-        <Stack direction="row" spacing={1} alignItems="center">
-          <FaSignInAlt className="text-gray-600" />
-          <Stack sx={{ pb: 0.2 }}>
-            <a href="#" className="util-link">
-              Sign in
-            </a>
-          </Stack>
-          {/* <Typography variant="subtitle1"  sx={{
-              color: "grey.800",
-              lineHeight: 1.8,
-              maxWidth: 600,
-              mt: 3,
-            }}>
-            Sign in
-          </Typography> */}
-        </Stack> 
-        </div>
-      </Toolbar>
+  <div className="header-utilities">
+    <Stack direction="row" spacing={1} alignItems="center">
+      <FaSignInAlt className="text-gray-600" />
+      <Stack sx={{ pb: 0.2 }}>
+        <a href="#" className="util-link">
+          Sign in
+        </a>
+      </Stack>
+    </Stack>
+  </div>
+</Toolbar>
 
       {/* Main nav */}
       <Box className="main-nav-wrapper">
@@ -95,7 +107,7 @@ export default function Header() {
                   </div>
                   <div className="mega-col image-col">
                     <img
-                      src="https://via.placeholder.com/250x200.png?text=Books"
+                      src={books}
                       alt="Books"
                     />
                   </div>
