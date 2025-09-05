@@ -128,7 +128,7 @@ export default function OutdoorEventBanner() {
       </Box>
 
       {/* Bottom Navigation Tabs */}
-      <Box sx={{ 
+      {/* <Box sx={{ 
         bgcolor: "background.paper"
       }}>
         <Container maxWidth="lg">
@@ -167,7 +167,7 @@ export default function OutdoorEventBanner() {
             ))}
           </Tabs>
         </Container>
-      </Box>
+      </Box> */}
 
       {/* Category Explore Carousel */}
       <CategoryExploreCarousel />

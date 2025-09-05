@@ -8,67 +8,48 @@ import {
   Avatar
 } from "@mui/material";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
-
 const categories = [
   {
     id: 1,
-    name: "Business Cards",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=150&h=150&fit=crop&crop=center",
+    name: "Any Paper Printing",
+    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=150&h=150&fit=crop&crop=center",
     color: "#FF6B35"
   },
   {
     id: 2,
-    name: "Postcards & Print Advertising",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=150&h=150&fit=crop&crop=center",
+    name: "Books",
+    image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=150&h=150&fit=crop&crop=center",
     color: "#4CAF50"
   },
   {
     id: 3,
-    name: "Signs, Banners & Posters",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=150&h=150&fit=crop&crop=center",
+    name: "Magazines",
+    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=150&h=150&fit=crop&crop=center",
     color: "#FF9800"
   },
   {
     id: 4,
-    name: "Stickers & Labels",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=150&h=150&fit=crop&crop=center",
-    color: "#FFEB3B"
-  },
-  {
-    id: 5,
-    name: "Clothing & Bags",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=150&h=150&fit=crop&crop=center",
+    name: "Posters",
+    image: "https://images.unsplash.com/photo-1500336624523-d727130c3328?w=150&h=150&fit=crop&crop=center",
     color: "#9C27B0"
   },
   {
+    id: 5,
+    name: "Binding Services",
+    image: "https://images.unsplash.com/photo-1517842645767-c639042777db?w=150&h=150&fit=crop&crop=center",
+    color: "#795548"
+  },
+  {
     id: 6,
-    name: "Promotional Products",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=150&h=150&fit=crop&crop=center",
+    name: "Laminating",
+    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=150&h=150&fit=crop&crop=center",
     color: "#2196F3"
   },
   {
     id: 7,
-    name: "Packaging",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=150&h=150&fit=crop&crop=center",
-    color: "#795548"
-  },
-  {
-    id: 8,
-    name: "Invitations, Gifts & Stationery",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=150&h=150&fit=crop&crop=center",
+    name: "Digital Printing",
+    image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=150&h=150&fit=crop&crop=center",
     color: "#E91E63"
-  },
-  {
-    id: 9,
-    name: "Wedding",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=150&h=150&fit=crop&crop=center",
-    color: "#4CAF50"
-  },
-  {
-    id: 10,
-    name: "Design & Logo",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=150&h=150&fit=crop&crop=center",
-    color: "#FFC107"
   }
 ];
 
