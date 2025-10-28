@@ -30,6 +30,8 @@ import { useMemo, useState } from "react";
 import CategoryExploreCarousel from "./CategoryExploreCarousel";
 import FeaturedCollectionsCarousel from "./FeaturedCollectionsCarousel";
 import heroImage from "../assets/pictures/hero.png";
+import { useNavigate } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function OutdoorEventBanner() {
   const [activeTab, setActiveTab] = useState(0); 
@@ -145,31 +147,69 @@ export default function OutdoorEventBanner() {
             to shine at <em>markets, events, and beyond</em>.
           </Typography>
           <Box sx={{ mt: 3 }}>
-            <Button 
-              variant="contained" 
-              color="primary"
-              size="large"
-              onClick={handleOpenDialog}
-              sx={{
-                px: 3,
-                py: 1.2,
-                borderRadius: 2,
-                boxShadow: 3,
-                textTransform: "none",
-                fontWeight: 700,
-                letterSpacing: 0.3,
-                transition: "transform 200ms ease, box-shadow 200ms ease",
-                "&:hover": {
-                  transform: "translateY(-2px)",
-                  boxShadow: 6
-                }
-              }}
+
+            <Stack 
+              direction="row" 
+              justifyContent="normal" 
+              alignItems="center"
+              sx={{ width: "100%" }}
+              gap={3}
             >
-              Make a query
-            </Button>
+              <Button
+                component={RouterLink}
+                to="/quotation"
+                variant="contained"
+                color="primary"
+                size="large"
+                sx={{
+                  px: 3,
+                  py: 1.2,
+                  borderRadius: 2,
+                  boxShadow: 3,
+                  textTransform: "none",
+                  fontWeight: 700,
+                  letterSpacing: 0.3,
+                  color: "common.white", // ensures text is white by default
+                  transition: "transform 200ms ease, box-shadow 200ms ease",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: 6,
+                    backgroundColor: "primary.main", // keeps background same
+                    color: "common.white" // 👈 keeps text color same
+                  }
+                }}
+              >
+                Get Quotation
+              </Button>
+              <Button
+                component={RouterLink}
+                to="/contact"
+                variant="contained"
+                color="primary"
+                size="large"
+                sx={{
+                  px: 3,
+                  py: 1.2,
+                  borderRadius: 2,
+                  boxShadow: 3,
+                  textTransform: "none",
+                  fontWeight: 700,
+                  letterSpacing: 0.3,
+                  color: "common.white", // ensures text is white by default
+                  transition: "transform 200ms ease, box-shadow 200ms ease",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: 6,
+                    backgroundColor: "primary.main", // keeps background same
+                    color: "common.white" // 👈 keeps text color same
+                  }
+                }}
+              >
+                Contact
+              </Button>
+            </Stack>
           </Box>
         </Box>
-
             {/* Right Image Section */}
             <Box sx={{ 
               position: "relative",

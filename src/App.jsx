@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 // Route configuration object for better maintainability
 const routes = [
   { path: "/", element: <Home />, title: "Home" },
+  { path: "/contact", element: <Contact />, title: "Contact" },
   // { path: "/services", element: <Services />, title: "Services" },
   // { path: "/products", element: <Products />, title: "Products" },
   // { path: "/pricing", element: <Pricing />, title: "Pricing" },
