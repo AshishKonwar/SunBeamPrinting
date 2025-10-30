@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: #fbfbf9e8;
   background-color: #242424;
 
   font-synthesis: none;
@@ -15,7 +15,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #fbfbf9e8;
   text-decoration: inherit;
 }
 a:hover {
@@ -128,7 +128,7 @@ h1 {
   margin-left: auto;
 }
 .header-utilities .util-link {
-  color: #111;
+  color: #fbfbf9e8;
   text-decoration: none;
   font-size: 14px;
 }
@@ -149,7 +149,7 @@ h1 {
   height: 44px;
   align-items: center;
 }
-.nav-item a { color: #111; text-decoration: none; font-size: 14px; }
+.nav-item a { color: #fbfbf9e8; text-decoration: none; font-size: 14px; }
 .nav-item:hover a { color: #1976d2; }
 .nav-item.has-mega { position: relative; }
 .nav-item .mega {
@@ -175,7 +175,7 @@ h1 {
 }
 .mega-col a {
   display: block;
-  color: #111;
+  color: #fbfbf9e8;
   text-decoration: none;
   padding: 4px 0;
   font-size: 13px;
@@ -226,7 +226,7 @@ button:focus-visible {
 
 /* Navigation wrapper */
 .main-nav-wrapper {
-  background: #fff;
+  background: #051121;
   border-top: 1px solid #eee;
 }
 
@@ -246,7 +246,7 @@ button:focus-visible {
 .nav-item a {
   display: block;
   padding: 1rem 0;
-  color: #111;
+  color: #fbfbf9e8;
   text-decoration: none;
   font-weight: 500;
 }
@@ -304,7 +304,7 @@ button:focus-visible {
 
 .mega-col a {
   display: block;
-  color: #333;
+  color: #fbfbf9e8;
   text-decoration: none;
   font-size: 14px;
   margin: 0.25rem 0;
@@ -314,3 +314,4 @@ button:focus-visible {
 .mega-col a:hover {
   color: #0070f3;
 }
+

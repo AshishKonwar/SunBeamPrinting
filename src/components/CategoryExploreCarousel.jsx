@@ -15,7 +15,7 @@ const categories = [
     image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=150&h=150&fit=crop&crop=center",
     color: "#FF6B35"
   },
-  {
+  {  
     id: 2,
     name: "Books",
     image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=150&h=150&fit=crop&crop=center",
@@ -39,21 +39,21 @@ const categories = [
     image: "https://images.unsplash.com/photo-1517842645767-c639042777db?w=150&h=150&fit=crop&crop=center",
     color: "#795548"
   },
-  {
+  {  
     id: 6,
     name: "Laminating",
     image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=150&h=150&fit=crop&crop=center",
     color: "#2196F3"
   },
-  {
+  { 
     id: 7,
     name: "Digital Printing",
     image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=150&h=150&fit=crop&crop=center",
     color: "#E91E63"
   }
-];
-
-export default function CategoryExploreCarousel() {
+]; 
+ 
+export default function CategoryExploreCarousel() { 
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const scrollContainerRef = useRef(null);
@@ -76,36 +76,35 @@ export default function CategoryExploreCarousel() {
       });
     }
   };
-
+          
   return (
-    <Box sx={{ py: 6, bgcolor: "background.paper" }}>
-      <Container maxWidth="xl">
-        {/* Section Title */}
+    <Box sx={{ py: 6, bgcolor: "#061727" }}>
+      <Container maxWidth="lg">
         <Typography 
-          variant="h4" 
+          variant="h6" 
           component="h2" 
           sx={{ 
             mb: 4, 
             fontWeight: 700,
-            color: "grey.800",
+            color: "#fbfbf9e8",
             textAlign: "center"
-          }}
+          }}     
         >
-          Explore all categories
-        </Typography>
-
-        <Box sx={{ position: "relative" }}>
-          {/* Navigation Buttons */}
-          {canScrollLeft && (
-            <IconButton
-              onClick={() => scroll('left')}
+          Explore all categories     
+        </Typography> 
+                                                        
+        <Box sx={{ position: "relative" }}> 
+          {/* Navigation Buttons */} 
+          {canScrollLeft && ( 
+            <IconButton 
+              onClick={() => scroll('left')}    
               sx={{
                 position: "absolute",
                 left: -30,
                 top: "50%",
                 transform: "translateY(-50%)",
                 bgcolor: "grey.200",
-                color: "grey.700",
+                color: "#fbfbf9e8",
                 zIndex: 2,
                 "&:hover": {
                   bgcolor: "grey.300"
@@ -115,27 +114,6 @@ export default function CategoryExploreCarousel() {
               <ChevronLeft />
             </IconButton>
           )}
-{/* 
-          {canScrollRight && (
-            <IconButton
-              onClick={() => scroll('right')}
-              sx={{
-                position: "absolute",
-                right: -30,
-                top: "50%",
-                transform: "translateY(-50%)",
-                bgcolor: "white",
-                color: "grey.700",
-                zIndex: 2,
-                boxShadow: 2,
-                "&:hover": {
-                  bgcolor: "grey.50"
-                }
-              }}
-            >
-              <ChevronRight />
-            </IconButton>
-          )} */}
 
           {/* Carousel Container */}
           <Box
@@ -187,7 +165,7 @@ export default function CategoryExploreCarousel() {
                     fontSize: "0.875rem",
                     lineHeight: 1.2,
                     maxWidth: 120,
-                    color: "text.primary"
+                    color: "#fbfbf9e8"
                   }}
                 >
                   {category.name}
@@ -200,3 +178,4 @@ export default function CategoryExploreCarousel() {
     </Box>
   );
 }
+

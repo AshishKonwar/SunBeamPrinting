@@ -100,17 +100,17 @@ export default function FeaturedCollectionsCarousel() {
   };
 
   return (
-    <Box sx={{ py: 6, bgcolor: "#F3F6F9" }}>
+    <Box sx={{ py: 6, bgcolor: "#051121" }}>
       <Container maxWidth="xl">
         {/* Section Title */}
         <Typography 
-          variant="h4" 
+          variant="h6" 
           component="h2" 
           sx={{ 
             mb: 4, 
-            fontWeight: 600,
+            fontWeight: 700,
             textAlign: "center",
-            color: "grey.800"
+            color: "#fbfbf9e8"
           }}
         >
           Featured collections & projects

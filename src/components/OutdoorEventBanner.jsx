@@ -80,24 +80,8 @@ export default function OutdoorEventBanner() {
   ];
 
   return (
-    <Box>
-      <Box sx={{ 
-        // bgcolor: "background.paper", 
-        // borderBottom: "1px solid", 
-        // borderColor: "divider",
-      }}>
-        <Container maxWidth="lg">
-          <Stack 
-            direction="row" 
-            justifyContent="space-between" 
-            alignItems="center"
-          >
-          </Stack>
-        </Container>
-      </Box>
-
-      {/* Main Banner Section */}
-      <Box sx={{ py: 6, bgcolor: "grey.50" }}>
+    <>
+      <Box sx={{ py: 6, bgcolor: "#051121" }}>
         <Container maxWidth="xl">
           <Box sx={{ 
             display: "grid", 
@@ -105,15 +89,14 @@ export default function OutdoorEventBanner() {
             gap: 4,
             alignItems: "center"
           }}>
-            {/* Left Text Section */}
-            <Box textAlign="left">
+            <Box textAlign="left">  
           <Typography
             variant="h3"
             component="h1"
             sx={{
               fontWeight: 700,
               mb: 2,
-              color: "grey.800",
+              color: "#fbfbf9e8",
             }}
           >
             Stand Out Everywhere with
@@ -125,7 +108,7 @@ export default function OutdoorEventBanner() {
             sx={{
               fontWeight: 900,
               display: "block",
-              color: "primary.main", 
+              color: "#01A9D8", 
               letterSpacing: 1,
             }}
           >
@@ -135,7 +118,7 @@ export default function OutdoorEventBanner() {
           <Typography
             variant="h6"
             sx={{
-              color: "grey.800",
+              color: "#fbfbf9e8",
               lineHeight: 1.8,
               maxWidth: 600,
               mt: 3,
@@ -159,7 +142,6 @@ export default function OutdoorEventBanner() {
                 component={RouterLink}
                 to="/quotation"
                 variant="contained"
-                color="primary"
                 size="large"
                 sx={{
                   px: 3,
@@ -169,14 +151,15 @@ export default function OutdoorEventBanner() {
                   textTransform: "none",
                   fontWeight: 700,
                   letterSpacing: 0.3,
-                  color: "common.white", // ensures text is white by default
-                  transition: "transform 200ms ease, box-shadow 200ms ease",
+                  color: "#fff",
+                  background: "linear-gradient(135deg, #01A9D8 0%, #01A9D8 100%)", // 💠 custom teal gradient
+                  transition: "transform 200ms ease, box-shadow 200ms ease, background 200ms ease",
                   "&:hover": {
                     transform: "translateY(-2px)",
                     boxShadow: 6,
-                    backgroundColor: "primary.main", // keeps background same
-                    color: "common.white" // 👈 keeps text color same
-                  }
+                    background: "linear-gradient(135deg, #01A9D8 0%, #01A9D8 100%)", // 💠 darker hover gradient 
+                    color: "#fff"
+                  },
                 }}
               >
                 Get Quotation
@@ -185,7 +168,6 @@ export default function OutdoorEventBanner() {
                 component={RouterLink}
                 to="/contact"
                 variant="contained"
-                color="primary"
                 size="large"
                 sx={{
                   px: 3,
@@ -195,14 +177,15 @@ export default function OutdoorEventBanner() {
                   textTransform: "none",
                   fontWeight: 700,
                   letterSpacing: 0.3,
-                  color: "common.white", // ensures text is white by default
-                  transition: "transform 200ms ease, box-shadow 200ms ease",
+                  color: "#fff",
+                  background: "linear-gradient(135deg, #01A9D8 0%, #01A9D8 100%)", // 💠 custom teal gradient
+                  transition: "transform 200ms ease, box-shadow 200ms ease, background 200ms ease",
                   "&:hover": {
                     transform: "translateY(-2px)",
                     boxShadow: 6,
-                    backgroundColor: "primary.main", // keeps background same
-                    color: "common.white" // 👈 keeps text color same
-                  }
+                    background: "linear-gradient(135deg, #01A9D8 0%, #01A9D8 100%)", // 💠 darker hover gradient
+                    color: "#fff"
+                  },
                 }}
               >
                 Contact
@@ -210,7 +193,6 @@ export default function OutdoorEventBanner() {
             </Stack>
           </Box>
         </Box>
-            {/* Right Image Section */}
             <Box sx={{ 
               position: "relative",
               borderRadius: 3,
@@ -233,130 +215,11 @@ export default function OutdoorEventBanner() {
         </Container>
       </Box>
 
-      {/* Inquiry Dialog */}
-      <Dialog open={dialogOpen} onClose={handleCloseDialog} fullWidth maxWidth="md">
-        <DialogTitle>Request a query</DialogTitle>
-        <Box component="form" onSubmit={handleSubmit} noValidate>
-          <DialogContent>
-            <Grid container spacing={2}>
-              <Grid item xs={12} md={6}>
-                <Stack spacing={2}>
-                  <TextField
-                    label="Full name"
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                    required
-                    fullWidth
-                  />
-                  <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
-                    <TextField
-                      label="Email"
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                      fullWidth
-                    />
-                    <TextField
-                      label="Phone"
-                      type="tel"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      fullWidth
-                    />
-                  </Stack>
-                  <FormControl fullWidth>
-                    <InputLabel id="preset-query-label">Select a query</InputLabel>
-                    <Select
-                      labelId="preset-query-label"
-                      label="Select a query"
-                      value={selectedQuery}
-                      onChange={(e) => setSelectedQuery(e.target.value)}
-                    >
-                      {presetQueries.map((q) => (
-                        <MenuItem key={q} value={q}>{q}</MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                  <TextField
-                    label="Custom query (optional)"
-                    value={customQuery}
-                    onChange={(e) => setCustomQuery(e.target.value)}
-                    multiline
-                    minRows={4}
-                    fullWidth
-                  />
-                </Stack>
-              </Grid>
-              <Grid item xs={12} md={6}>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: 400,
-                  borderRadius: 3,
-                  backgroundImage: `url(${heroImage})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
-                }}
-              />
-              </Grid>
-            </Grid>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleCloseDialog}>Cancel</Button>
-            <Button type="submit" variant="contained">Submit</Button>
-          </DialogActions>
-        </Box>
-      </Dialog>
-
-      {/* Bottom Navigation Tabs */}
-      {/* <Box sx={{ 
-        bgcolor: "background.paper"
-      }}>
-        <Container maxWidth="lg">
-        <Tabs 
-            value={activeTab} 
-            onChange={handleTabChange}
-            variant="scrollable"
-            scrollButtons="auto"
-            sx={{
-              "& .MuiTab-root": {
-                minWidth: "auto",
-                px: 3,
-                py: 2,
-                textTransform: "none",
-                fontWeight: 500,
-                fontSize: "1rem",
-                color: "black", 
-              },
-              "& .MuiTab-root.Mui-selected": {
-                color: "#2F3A53", 
-              }, 
-              "& .MuiTabs-indicator": {
-                height: 3,
-                bgcolor: "black"
-              }
-            }}
-          >
-            {tabs.map((tab, index) => (  
-              <Tab 
-                key={tab}
-                label={tab} 
-                sx={{
-                  color: activeTab === index ? "black" : "text.secondary"
-                }}
-              />
-            ))}
-          </Tabs>
-        </Container>
-      </Box> */}
-
       {/* Category Explore Carousel */}
       <CategoryExploreCarousel />
 
       {/* Featured Collections Carousel */}
       <FeaturedCollectionsCarousel />
-    </Box>
+    </>
   );
 }

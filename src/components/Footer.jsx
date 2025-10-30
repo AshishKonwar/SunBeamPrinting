@@ -39,7 +39,7 @@ import {
   
   export default function Footer() {
     return (
-      <Box component="footer" sx={{ bgcolor: "primary.dark", color: "white", backgroundColor: "#1976d2" }}>
+      <Box component="footer" sx={{ bgcolor: "primary.dark", color: "#fbfbf9e8", backgroundColor: "#051121" }}>
         {/* Main Footer */}
         <Container maxWidth="lg" sx={{ py: 6 }}>
           <Grid container spacing={4}>

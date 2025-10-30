@@ -1,94 +1,105 @@
-import React from "react";
-import { 
-  Box, 
-  Grid, 
-  Typography, 
-  TextField, 
-  Button, 
-  Paper, 
-  Breadcrumbs, 
-  Link 
+import React, { useState } from "react";
+import {
+  Box,
+  Grid,
+  Typography,
+  TextField,
+  Button,
+  Paper,
+  Breadcrumbs,
+  Link,
 } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function ContactUs() {
   const navigate = useNavigate();
+  const [status, setStatus] = useState("");
 
-  const { 
-    handleSubmit, 
-    control, 
-    formState: { errors }, 
-    reset 
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+    reset,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
-    alert("Form submitted successfully!");
-    reset();
+  const onSubmit = async (data) => {
+    setStatus("Sending...");
+
+    try {
+      // Call your backend mail API
+      const response = await axios.post("http://localhost:3000/api/mail", data);
+
+      if (response.data.success) {
+        setStatus("✅ Message sent successfully!");
+        reset();
+      } else {
+        setStatus("❌ Failed to send message.");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setStatus("❌ Error sending message. Check console.");
+    }
   };
 
   return (
-    <Box sx={{ p: 4, backgroundColor: "#fafafa", minHeight: "70vh" }}>
+      <Box sx={{ p: 4, backgroundColor: "#061727", minHeight: "70vh" }}>
       <Box sx={{ mb: 3 }}>
-        <Breadcrumbs 
-          aria-label="breadcrumb" 
-          sx={{ 
-            fontSize: "0.85rem",  // smaller text size
-            "& a, & p": { fontSize: "0.85rem" } // ensure both link and text shrink
+        <Breadcrumbs
+          aria-label="breadcrumb"
+          sx={{
+            color:"#fbfbf9e8",
+            fontSize: "0.85rem",
+            "& a, & p": { fontSize: "0.85rem" },
           }}
         >
-          <Link
+         <Link
             underline="hover"
-            color="inherit"
-            sx={{ cursor: "pointer" }}
+            color="#fbfbf9e8"
+            sx={{
+              cursor: "pointer",
+              transition: "color 0.3s ease",
+              "&:hover": {
+                color: "#01A9D8",
+              },
+            }}
             onClick={() => navigate("/")}
           >
             Home
           </Link>
-          <Typography color="grey.800" sx={{ fontSize: "0.85rem" }}>
+          <Typography color="#fbfbf9e8" sx={{ fontSize: "0.85rem" }}>
             Contact Us
           </Typography>
         </Breadcrumbs>
       </Box>
 
-      {/* ===== Page Title ===== */}
-      {/* <Typography 
-        variant="h4" 
-        fontWeight={700} 
-        textAlign="center" 
-        gutterBottom
-      >
-        Contact Us
-      </Typography> */}
-
-      {/* ===== Main Content ===== */}
       <Grid container spacing={10} justifyContent="center" mt={2}>
         {/* Left Side - Contact Info */}
         <Grid item xs={12} md={5}>
           <Box textAlign="center" sx={{ lineHeight: 1.8 }}>
-            <Typography variant="h6" gutterBottom>
+            <Typography color="#fbfbf9e8" variant="h6" gutterBottom>
               Address:
             </Typography>
-            <Typography variant="body1">
+            <Typography color="#fbfbf9e8" variant="body1">
               Rupnagar, Guwahati <br />
               Assam, India
             </Typography>
 
-            <Typography variant="h6" sx={{ mt: 3 }}>
+            <Typography color="#fbfbf9e8" variant="h6" sx={{ mt: 3 }}>
               Phone No.
             </Typography>
-            <Typography variant="body1">
+            <Typography color="#fbfbf9e8" variant="body1">
               1234567879 <br />
               1234567891
             </Typography>
 
-            <Typography variant="h6" sx={{ mt: 3 }}>
+            <Typography color="#fbfbf9e8" variant="h6" sx={{ mt: 3 }}>
               Email:
             </Typography>
             <Typography 
-              variant="body1" 
-              sx={{ fontWeight: 600, color: "primary.main" }}
+              variant="body1"
+              sx={{ fontWeight: 600, color: "#01A9D8" }}
             >
               sunbeamprintingpress@gmail.com
             </Typography>
@@ -98,10 +109,10 @@ export default function ContactUs() {
         {/* Right Side - Contact Form */}
         <Grid item xs={12} md={6}>
           <Paper sx={{ p: 4, boxShadow: 3, borderRadius: 2 }}>
-            <Box 
-              component="form" 
-              noValidate 
-              autoComplete="off" 
+            <Box
+              component="form"
+              noValidate
+              autoComplete="off"
               onSubmit={handleSubmit(onSubmit)}
             >
               {/* Name */}
@@ -131,8 +142,8 @@ export default function ContactUs() {
                   required: "Mobile number is required",
                   pattern: {
                     value: /^[0-9]{10}$/,
-                    message: "Enter a valid 10-digit mobile number"
-                  }
+                    message: "Enter a valid 10-digit mobile number",
+                  },
                 }}
                 render={({ field }) => (
                   <TextField
@@ -155,8 +166,8 @@ export default function ContactUs() {
                   required: "Email is required",
                   pattern: {
                     value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                    message: "Enter a valid email address"
-                  }
+                    message: "Enter a valid email address",
+                  },
                 }}
                 render={({ field }) => (
                   <TextField
@@ -197,14 +208,27 @@ export default function ContactUs() {
                   textTransform: "none",
                   fontWeight: 600,
                   py: 1.2,
-                  backgroundColor: "#03A9F4",
-                  "&:hover": {
-                    backgroundColor: "#0288D1"
-                  }
+                  backgroundColor: "#01A9D8",
+                  "&:hover": { backgroundColor: "#01A9D8" },
                 }}
               >
                 Send
               </Button>
+
+              {status && (
+                <Typography
+                  sx={{ mt: 2, fontSize: "0.9rem", textAlign: "center" }}
+                  color={
+                    status.startsWith("✅")
+                      ? "success.main"
+                      : status.startsWith("❌")
+                      ? "error.main"
+                      : "text.secondary"
+                  }
+                >
+                  {status}
+                </Typography>
+              )}
             </Box>
           </Paper>
         </Grid>

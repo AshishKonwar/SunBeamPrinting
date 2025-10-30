@@ -31,17 +31,25 @@ const images = [
 
 export default function UGCGallery() {
   return (
-    <Box sx={{ py: 6 }}>
+    <Box sx={{ py: 6, bgcolor: "#051121" }}>
       <Container maxWidth="xl">
-        <Typography variant="h5" component="h3" sx={{ mb: 3, fontWeight: 600 }}>
-          Made by you, #SunBeamPress
-        </Typography>
-        <Typography sx={{ color: "text.secondary", mb: 3 }}>
-          We love to see your custom creations. Post a photo on social media and
-          tag <strong>@SunBeamPress</strong> with <strong>#MadeWithSunBeam</strong>{" "}
-          for a chance to be featured here.
-        </Typography>
-
+        <Box sx={{ textAlign: "center", mb: 3 }}>
+          <Typography
+            variant="h6"
+            component="h3"
+            sx={{ fontWeight: 700, color: "#fbfbf9e8", mb: 1 }}
+          >
+            Made by you, #SunBeamPress
+          </Typography>
+          <Typography  
+            variant="subtitle2"
+            sx={{ color: "#fbfbf9e8" }}
+          >
+            We love to see your custom creations. Post a photo on social media and tag{" "}
+            <strong>@SunBeamPress</strong> with <strong>#MadeWithSunBeam</strong> for a
+            chance to be featured here.
+          </Typography>
+        </Box>  
         <Box
           sx={{
             display: "grid",

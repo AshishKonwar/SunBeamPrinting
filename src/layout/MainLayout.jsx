@@ -16,12 +16,11 @@ export default function MainLayout({ children }) {
           sx={{
             flexGrow: 1,
             width: "100%",
-            p: 3,
             overflow: "auto",
           }}
         >
           <Toolbar />
-          <Box sx={{ height: 120 }} />
+          <Box sx={{ height: 80 }} />
           {children}
         </Box>
       </Box>

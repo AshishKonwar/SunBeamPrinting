@@ -10,29 +10,46 @@ export default function Header() {
       elevation={0}
       sx={{
         zIndex: (theme) => theme.zIndex.drawer + 1,
-        backgroundColor: "#ffffff",
+        backgroundColor: "#061727",
         color: "#111",
         borderBottom: "1px solid #eee",
       }}
     >
-      {/* Top row: logo, search, utilities */}
       <Toolbar sx={{ gap: 5, minHeight: 72 }}>
-  <Box
-    className="site-logo"
-    sx={{
-      display: "flex",
-      alignItems: "center",
-      fontWeight: 700,
-      fontSize: 24,
-    }}
-  >
-    <span className="logo-mark">S</span>
-    <Typography variant="inherit" sx={{ color: "grey.800" }}>
-      Sun Beam
-    </Typography>
-  </Box>
+         <Box
+          className="site-logo"
+          sx={{
+            display: "flex",
+            flexDirection: "column", // 👈 stack vertically
+            alignItems: "center",
+            justifyContent: "center",
+            fontWeight: 700,
+            fontSize: 24,
+            lineHeight: 1.2,
+          }}
+        >
+          <Box
+            component="img"
+            src="/src/assets/pictures/logo.jpeg" // 👈 replace with your actual logo path
+            alt="Site Logo"
+            sx={{
+              height: 30,
+              width: "auto",
+              mb: 0.5, // 👈 small space between logo and text
+            }}
+          />
+          <Box
+            component="span"
+            sx={{
+              fontSize: 10,
+              fontWeight: 600,
+              color: "#fbfbf9e8",
+            }}
+          >
+            SUNBEAM
+          </Box>
+        </Box>
 
-  {/* Modern Search Bar */}
   <OutlinedInput
     placeholder="Search..."
     size="small"
@@ -115,7 +132,6 @@ export default function Header() {
               </div>
             </li>
 
-            {/* Magazines */}
             <li className="nav-item has-mega">
               <a href="#">Magazines</a>
               <div className="mega">
@@ -137,7 +153,6 @@ export default function Header() {
               </div>
             </li>
 
-            {/* Posters */}
             <li className="nav-item has-mega">
               <a href="#">Posters</a>
               <div className="mega">
@@ -159,7 +174,6 @@ export default function Header() {
               </div>
             </li>
 
-            {/* Binding Services */}
             <li className="nav-item has-mega">
               <a href="#">Binding Services</a>
               <div className="mega">
@@ -181,7 +195,6 @@ export default function Header() {
               </div>
             </li>
 
-            {/* Laminating */}
             <li className="nav-item has-mega">
               <a href="#">Laminating</a>
               <div className="mega">
@@ -203,7 +216,6 @@ export default function Header() {
               </div>
             </li>
 
-            {/* Digital Printing */}
             <li className="nav-item has-mega">
               <a href="#">Digital Printing</a>
               <div className="mega">
@@ -228,10 +240,9 @@ export default function Header() {
         </nav>
       </Box>
 
-      {/* Promo strip */}
       <Box
         sx={{
-          backgroundColor: "grey.800",
+          backgroundColor: "#01A9D8",
           overflow: "hidden",
           whiteSpace: "nowrap",
           position: "relative",
@@ -242,7 +253,8 @@ export default function Header() {
       >
         <Typography
           sx={{
-            color: "white",
+            color: "#fbfbf9e8",
+            fontWeight: 700,
             display: "inline-block",
             px: 2,
             animation: "scrollText 20s linear infinite",

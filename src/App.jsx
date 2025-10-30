@@ -7,11 +7,13 @@ import Pricing from "./pages/Pricing";
 import Orders from "./pages/Orders";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Quotation from "./pages/Quotation";
 
 // Route configuration object for better maintainability
 const routes = [
   { path: "/", element: <Home />, title: "Home" },
   { path: "/contact", element: <Contact />, title: "Contact" },
+  { path: "/quotation", element: <Quotation />, title: "Quotation" },
   // { path: "/services", element: <Services />, title: "Services" },
   // { path: "/products", element: <Products />, title: "Products" },
   // { path: "/pricing", element: <Pricing />, title: "Pricing" },
